@@ -1,0 +1,27 @@
+# Rats and Houses Problem
+
+r = 7      # number of rats
+unit = 2   # food required per rat
+arr = [2, 8, 3, 5, 7, 4, 1, 2]   # food in each house
+
+if arr is None or len(arr) == 0:
+    result = -1
+else:
+    total_required = r * unit
+    total_available = sum(arr)
+
+    if total_available < total_required:
+        result = 0
+    else:
+        total = 0
+        count = 0
+        for food in arr:
+            total += food
+            count += 1
+            if total >= total_required:
+                break
+        result = count
+
+print(result)
+
+
